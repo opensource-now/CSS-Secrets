@@ -133,3 +133,33 @@ body{
 		background-position: calc(100% - 20px) calc(100% - 10px);
 		background-size: 25%;
 }
+
+
+
+/*005.inner-rounding.html*/
+.inner-rounding-one{
+	background: $brown;
+	@include rem(padding, 8px);
+	@include rem(margin, 40px 0px);
+
+}
+.inner-rounding-one > div {
+	background: $lightBrown;
+	@include vendor-prefixes(border-radius, .8em);
+	@include rem(border-radius, 8px);
+	@include rem(padding, 10px);
+
+}
+.inner-rounding-two{
+	@include rem(outline-width, 6px);
+	outline-style: solid;
+	outline-color: $brown;
+	@include box-shadow(0 0 0 .4em $lightBrown);
+	@include rem(max-width, 300px);
+	@include vendor-prefixes(border-radius, .8em);
+	@include rem(border-radius, 8px);
+	@include rem(padding, 10px);
+	background: $lightBrown;
+	@include rem(margin, 40px 0px);
+	
+}
