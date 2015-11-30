@@ -1,0 +1,40 @@
+1. Instalar compass
+Help: 
+http://www.elegantthemes.com/blog/tips-tricks/how-to-use-sass-with-wordpress-a-step-by-step-guide
+
+sudo gem install compass
+sudo gem install css_parser
+
+2. Crear proyecto compass en la carpeta del proyecto
+Path (pwd in terminal) : 
+cd /Applications/mamp/htdocs/CSS-Secrets
+
+
+
+compass create sass-test
+
+3. Escribir SASS
+compass watch
+
+4. Compilar SASS a CSS
+compass compile
+compass compile -e production
+
+
+
+
+MODERNIZR
+
+1 Instalación Global
+sudo npm install -g modernizr
+
+2. Construir la configuración que queremos en Modernizr
+
+https://modernizr.com/download?setclasses
+
+3. config.json (meter dentro de la carpeta JS)
+modernizr -c modernizr-config.json
+(Modernizr build saved to /Applications/MAMP/htdocs/CSS-Secrets/js/modernizr.js)
+
+
+

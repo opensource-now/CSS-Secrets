@@ -1,0 +1,159 @@
+@import "variables";
+
+
+// UNITS: Pixel to REM
+// Create REM values with PX fall back
+//
+// Generate a REM with PX fallback from 
+// $baseFontSize. Enter the desired size based
+// on pixels in numerical form. Supports shorthand.
+//
+// Forked from: http://codepen.io/thejameskyle/pen/JmBjc
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include rem($property, $values);
+// Example Usage:
+//    @include rem(font-size, 16px);
+//    @include rem(margin, 0 24px 0 12px);
+//
+// Outputs:
+//    font-size: 16px;
+//    font-size: 1.6rem;
+//    margin: 0 24px 0 12px;
+//    margin: 0 2.4rem 0 1.2rem;
+// ----------------------------------
+// http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+$baseFontSize: 10; // Based on HTML reset html { font-size: 62.5%; }
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+	$px : (); 
+	$rem: ();
+	
+	$root: $baseFontSize;
+	
+	@each $value in $values {
+		@if $value == 0 or $value == auto {
+			$px : append($px , $value); // append: Appends a single value onto the end of a list. append($list1, $val, [$separator])
+			$rem: append($rem, $value);
+		}
+		
+		@else if type-of($value) == number {  //type-of: number (100px), string (abc, 'abc'), bool (true), color (blue, #fff)
+			$unit: unit($value); // unit: Returns the unit(s) associated with a number.
+			$val: parseInt($value);
+			
+			@if $unit == "px" {
+				$px : append($px,  $value);
+				$rem: append($rem, ($val / $root + rem));
+			}
+			
+			@if $unit == "rem" {
+				$px : append($px,  ($val * $root + px));
+				$rem: append($rem, $value);
+			}
+		}
+		
+		@else {
+			$px : append($px,  $value);
+			$rem: append($rem, $value);
+		}
+	}
+	
+	@if $px == $rem {
+		#{$property}: $px;
+	} @else {
+		#{$property}: $px;
+		#{$property}: $rem;
+	} 
+}
+
+@function rem($value) {
+	$root: $baseFontSize;
+	$val: parseInt($value);
+	$return: ();
+	
+	@if unit($value) == "px" {
+		$return: append($return, ($val / $root + rem));
+	} @else {
+		$return: append($return, ($val * $root + px));
+	}
+	
+	@return $return;
+}
+
+
+
+// LINKS
+@mixin linx ($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    text-decoration: none;
+    @include transition(all 0.3s ease-in-out);
+    &:visited {
+      color: $visit;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $hover;
+      text-decoration: none;   
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+// WebKit font-smoothing 
+
+@mixin font-smoothing($value: antialiased) {
+  @if $value == antialiased {
+  	text-rendering: optimizeLegibility;    
+  	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+
+// TYPOGRAPHY
+
+// Function to convert pixels to rems
+// html { font-size: 62.5%; }
+
+$fontbase: 16 !default;
+$line-height-base: 1.625 !default;
+$default-font-smoothing: subpixel-antialiased !default;
+
+
+
+@function px-to-rem($size) {
+    @return ($size / 10) + rem;
+}
+
+@mixin font-size($fs: false, $lh: $default-line-height, $sm: $default-font-smoothing ) {
+   @if $fs {
+        font-size: $fs  + px;
+        font-size: px-to-rem($fs);
+    }
+    @if $lh { line-height: $lh; }
+    @if $sm { -webkit-font-smoothing: $sm; }
+}
+
+
+// PREFIXES
+// Vendor prefixing for shorthand properties
+@mixin vendor-prefixes($property, $value) {
+        -webkit-#{$property}: $value;
+        -moz-#{$property}: $value;
+        -ms-#{$property}: $value;
+        -o-#{$property}: $value;
+}

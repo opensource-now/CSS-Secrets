@@ -1,0 +1,161 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 18, ../sass/screen.scss */
+h4.shadow {
+  color: #ff4612;
+}
+
+@supports (text-shadow: 0 0 0.3em gray) {
+  /* line 22, ../sass/screen.scss */
+  h4.shadow {
+    color: #ff4612;
+    -webkit-text-shadow: 0 0 0.8em gray;
+    -moz-text-shadow: 0 0 0.8em gray;
+    -ms-text-shadow: 0 0 0.8em gray;
+    -o-text-shadow: 0 0 0.8em gray;
+    text-shadow: 0 0 .8em gray;
+  }
+}
+/*00. Background Color optimization*/
+/* line 30, ../sass/screen.scss */
+button.base-button {
+  font: inherit;
+  padding: 0.3em 0.8em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #58a linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  border-radius: .2em;
+  -webkit-box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  color: white;
+  -webkit-text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5);
+  -moz-text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5);
+  -ms-text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5);
+  -o-text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5);
+  text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5);
+  font-size: 125%;
+  /* Assuming a 16px parent font size */
+  line-height: 1.5;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 46, ../sass/screen.scss */
+button.base-button + button.base-button {
+  margin-left: 15px;
+}
+/* line 49, ../sass/screen.scss */
+button.base-button.cancel {
+  background-color: #cc0000;
+}
+/* line 51, ../sass/screen.scss */
+button.base-button.cancel:hover {
+  background-color: rgba(204, 0, 0, 0.7);
+}
+/* line 55, ../sass/screen.scss */
+button.base-button.ok {
+  background-color: #66bb00;
+}
+/* line 57, ../sass/screen.scss */
+button.base-button.ok:hover {
+  background-color: rgba(102, 187, 0, 0.7);
+}
+
+/* line 66, ../sass/screen.scss */
+ul li.back-btn {
+  list-style-type: none;
+  margin-top: 40px;
+  margin-top: 4rem;
+}
+
+/*002.Translucent borders.html*/
+/* line 78, ../sass/screen.scss */
+body.bob-super-bkg {
+  background: url(../images/presenter-bob-super.jpg) top right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* line 86, ../sass/screen.scss */
+.translucent {
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.9);
+  background-clip: padding-box;
+  padding: 10px;
+  padding: 1rem;
+}
+
+/*003. Multiple borders*/
+/* line 94, ../sass/screen.scss */
+.square-div-100 {
+  width: 100px;
+  width: 10rem;
+  height: 100px;
+  height: 10rem;
+  background-color: #66bb00;
+  margin: 40px;
+  margin: 4rem;
+}
+
+/* line 101, ../sass/screen.scss */
+.box-shadow-borders {
+  -moz-box-shadow: rgba(255, 70, 18, 0.7) 0 0 0 10px, #665555 0 0 0 10px inset, 15px 15px 30px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(255, 70, 18, 0.7) 0 0 0 10px, #665555 0 0 0 10px inset, 15px 15px 30px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(255, 70, 18, 0.7) 0 0 0 10px, #665555 0 0 0 10px inset, 15px 15px 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* line 104, ../sass/screen.scss */
+.outline-borders {
+  border: 10px solid #665555;
+  outline: 10px solid rgba(255, 70, 18, 0.7);
+}
+
+/*004.Flexible background positioning.html*/
+/* line 111, ../sass/screen.scss */
+.square-div-300x200 {
+  max-width: 300px;
+  max-width: 30rem;
+  min-height: 200px;
+  min-height: 20rem;
+  background-color: transparent;
+  margin: 40px;
+  margin: 4rem;
+  padding: 10px;
+  padding: 1rem;
+  color: #fff;
+}
+
+/* line 119, ../sass/screen.scss */
+.page-code-svg {
+  background: url(../images/page-code.svg) no-repeat bottom right #5588aa;
+  background-position: right 20px bottom 10px;
+  background-size: 25%;
+}
+
+/* line 124, ../sass/screen.scss */
+.page-code-svg-content-box {
+  padding: 10px;
+  padding: 1rem;
+  background: url(../images/page-code.svg) no-repeat #5588aa bottom right;
+  background-position: right 20px bottom 10px;
+  background-size: 25%;
+  background-origin: content-box;
+}
+
+/* line 131, ../sass/screen.scss */
+.page-code-svg-calc {
+  background: url(../images/page-code.svg) no-repeat #5588aa;
+  background-position: calc(100% - 20px) calc(100% - 10px);
+  background-size: 25%;
+}

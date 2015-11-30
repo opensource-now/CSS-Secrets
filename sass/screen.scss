@@ -1,0 +1,135 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+
+
+// @supports rule, which is the “native” Modernizr.
+// However, for now, be wary of using @supports. By using it here we just limited our effect not only to browsers that support text shadows, but also to browsers that support the @supports rule—a much more limited set.
+
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+@import "utilities/variables";
+@import "utilities/mixin";
+
+
+h4.shadow{
+	color: $orange;
+}
+@supports (text-shadow: 0 0 .3em gray){
+	h4.shadow{
+		color: $orange;
+		@include vendor-prefixes(text-shadow, 0 0 .8em gray);
+		text-shadow: 0 0 .8em gray;
+	}
+}
+
+/*00. Background Color optimization*/
+button.base-button {
+	font: inherit; 
+	padding: .3em .8em ;
+	border: 1px solid rgba(0,0,0,.1);
+	background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
+	@include vendor-prefixes(border-radius, .2em);
+	border-radius: .2em;
+	@include vendor-prefixes(box-shadow, 0 .05em .25em rgba(0,0,0,.5));
+	box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+	color: white;
+	@include vendor-prefixes(text-shadow, 0 -.05em .05em rgba(0,0,0,.5));
+	text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+	font-size: 125%; /* Assuming a 16px parent font size */
+	line-height: 1.5;
+	@include vendor-prefixes(transition, all 0.3s ease-in-out);
+	transition: all 0.3s ease-in-out;
+	 &+& {
+	    margin-left: 15px;
+  	}
+  	&.cancel{
+	  	background-color: rgba(204,0,0, 1); 
+	  	&:hover{
+		  	background-color: rgba(204,0,0, 0.7);
+	  	} 	
+  	}
+  	&.ok{
+	  	background-color: rgba(102,187,0, 1);
+	  	&:hover{
+		  	background-color: rgba(102,187,0, 0.7);
+	  	} 	
+	  	
+  	}
+  	
+}
+ul{
+	li{
+		&.back-btn{
+			list-style-type: none;
+			@include rem(margin-top, 4rem);
+			
+		}
+	}
+}
+
+
+/*002.Translucent borders.html*/
+
+body{
+	&.bob-super-bkg{
+		background: url(../images/presenter-bob-super.jpg) top right;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 100%;
+	
+	}
+}
+.translucent {
+	border: 10px solid hsla(0,0%,100%,.5); 
+	background: rgba(255, 255, 255, 0.9);
+	background-clip: padding-box;
+	@include rem(padding, 10px);
+}
+
+/*003. Multiple borders*/
+.square-div-100{
+	@include rem(width, 100px);
+	@include rem(height, 100px);
+	background-color: $green-pistachio;
+	@include rem(margin, 40px);
+	
+}
+.box-shadow-borders{
+	@include box-shadow( rgba($orange,0.7) 0 0 0 10px, rgba($brown, 1) 0 0 0 10px inset, 15px 15px 30px 10px rgba($black, 0.2) );
+}
+.outline-borders{
+	border: 10px solid rgba($brown, 1);
+	outline: 10px solid rgba($orange,0.7);
+}
+
+
+/*004.Flexible background positioning.html*/
+.square-div-300x200{
+	@include rem(max-width, 300px);
+	@include rem(min-height, 200px);
+	background-color: transparent;
+	@include rem(margin, 40px);
+	@include rem(padding, 10px);
+	color: $white;
+}
+.page-code-svg{
+		background: url(../images/page-code.svg) no-repeat bottom right $darkBlue;
+		background-position: right 20px bottom 10px;
+		background-size: 25%
+}
+.page-code-svg-content-box{
+		@include rem(padding, 10px);
+		background: url(../images/page-code.svg) no-repeat $darkBlue bottom right;
+		background-position: right 20px bottom 10px;
+		background-size: 25%;
+		background-origin: content-box
+}
+.page-code-svg-calc{
+		background: url(../images/page-code.svg) no-repeat $darkBlue;
+		background-position: calc(100% - 20px) calc(100% - 10px);
+		background-size: 25%;
+}
