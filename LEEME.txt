@@ -7,7 +7,7 @@ sudo gem install css_parser
 
 2. Crear proyecto compass en la carpeta del proyecto
 Path (pwd in terminal) : 
-cd /Applications/mamp/htdocs/CSS-Secrets
+cd /Applications/mamp/htdocs/CSS-Secrets-Design
 
 
 

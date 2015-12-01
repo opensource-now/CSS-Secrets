@@ -115,6 +115,7 @@ body{
 	@include rem(margin, 40px);
 	@include rem(padding, 10px);
 	color: $white;
+	background-color: transparent;
 }
 .page-code-svg{
 		background: url(../images/page-code.svg) no-repeat bottom right $darkBlue;
@@ -161,5 +162,40 @@ body{
 	@include rem(padding, 10px);
 	background: $lightBrown;
 	@include rem(margin, 40px 0px);
-	
 }
+
+
+/*006.striped-backgrounds.html*/
+
+.box-shadow-open{
+ 	@include box-shadow(10px 10px 20px darken($whiteSmoke, 20%));
+}
+
+.linear-gradient-2080{
+ 	@include background-image(linear-gradient(darken( $orange, 5% ) 20%, lighten($yellow, 10%) 80%));
+}
+.linear-gradient-5050{
+ 	@include background-image(linear-gradient(darken( $orange, 5% ) 50%, lighten($yellow, 10%) 50%));
+}
+.linear-gradient-threecolors{
+	background: linear-gradient(lighten($yellow, 10%) 33.3%, $orange 0, $orange 66.6%, $black 0);
+}
+.linear-gradient-size{
+ 	background-size: 100% 80px;
+}
+.linear-gradient-norepeat{
+ 	background-repeat: no-repeat;
+}
+.linear-gradient-sizesmall{
+ 	background-size: 100% 15px;
+}
+.linear-gradient-toright{
+	 @include background-image(linear-gradient(to right, lighten($yellow, 10%), darken( $orange, 5% ), darken( $yellow, 5% )));
+}
+.linear-gradient-verticalStripes{
+ 	@include background-image(linear-gradient(to right, darken( $orange, 5% ) 50%, lighten($yellow, 10%) 50%));
+}
+.linear-gradient-vsize{
+ 	background-size: 30px 100%;
+}
+
