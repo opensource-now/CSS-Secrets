@@ -198,4 +198,25 @@ body{
 .linear-gradient-vsize{
  	background-size: 30px 100%;
 }
-
+.angle-gradient-v1 {
+	 @include background-image(linear-gradient(45deg, lighten($yellow, 10%) 50%, darken( $orange, 5% ) 50%));
+	 background-size: 100% 100%;
+ }
+.angle-gradient-v2{
+	background: linear-gradient(45deg, lighten($yellow, 10%) 25%, darken( $orange, 5% ) 0, darken( $orange, 5% ) 50%, lighten($yellow, 10%)  0, lighten($yellow, 10%) 75%, darken( $orange, 5% ) 0);
+	background-size: 42.426406871px 42.426406871px; // 2 × 15 *  (square 2) ≈ 42 . 426406871 pixels:
+}
+.angle-gradient-v3 {
+	 @include background-image(linear-gradient(45deg, lighten($yellow, 10%) 50%, darken( $orange, 5% ) 50%));
+	 background-size: 32px 32px;
+ }
+ .angle-gradient-v4 {
+	 @include background-image(repeating-linear-gradient(45deg, lighten($yellow, 10%), darken( $orange, 5% ) 30px));
+ }
+  .angle-gradient-v5 {
+	 @include background-image(repeating-linear-gradient(60deg, lighten($yellow, 10%), lighten($yellow, 10%) 15px, darken( $orange, 5% ) 0, darken( $orange, 5% ) 30px));
+ }
+   .angle-gradient-v6 {
+	 background: darken( $orange, 5% );   
+	 @include background-image(repeating-linear-gradient(30deg, hsla(0,0%,100%,.1),hsla(0,0%,100%,.1) 15px,transparent 0, transparent 30px));
+ }

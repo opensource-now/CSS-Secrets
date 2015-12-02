@@ -38,3 +38,5 @@ modernizr -c modernizr-config.json
 
 
 
+GIT
+http://rogerdudler.github.io/git-guide/
