@@ -26,47 +26,23 @@ h4.shadow{
 	}
 }
 
+    
+      
 /*00. Background Color optimization*/
-button.base-button {
-	font: inherit; 
-	padding: .3em .8em ;
-	border: 1px solid rgba(0,0,0,.1);
-	background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
-	@include vendor-prefixes(border-radius, .2em);
-	border-radius: .2em;
-	@include vendor-prefixes(box-shadow, 0 .05em .25em rgba(0,0,0,.5));
-	box-shadow: 0 .05em .25em rgba(0,0,0,.5);
-	color: white;
-	@include vendor-prefixes(text-shadow, 0 -.05em .05em rgba(0,0,0,.5));
-	text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
-	font-size: 125%; /* Assuming a 16px parent font size */
-	line-height: 1.5;
-	@include vendor-prefixes(transition, all 0.3s ease-in-out);
-	transition: all 0.3s ease-in-out;
-	 &+& {
-	    margin-left: 15px;
-  	}
-  	&.cancel{
-	  	background-color: rgba(204,0,0, 1); 
-	  	&:hover{
-		  	background-color: rgba(204,0,0, 0.7);
-	  	} 	
-  	}
-  	&.ok{
-	  	background-color: rgba(102,187,0, 1);
-	  	&:hover{
-		  	background-color: rgba(102,187,0, 0.7);
-	  	} 	
-	  	
-  	}
-  	
+.btn-call-to-action {
+	@include button-base;
+	@include button-success  	
 }
+.btn-call-to-cancel{
+	@include button-base;
+	@include button-cancel;  	
+}
+
 ul{
 	li{
 		&.back-btn{
 			list-style-type: none;
 			@include rem(margin-top, 4rem);
-			
 		}
 	}
 }
