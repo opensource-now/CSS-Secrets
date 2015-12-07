@@ -401,3 +401,39 @@ body.bob-super-bkg {
   background-image: linear-gradient(#ffffff 2px, rgba(0, 0, 0, 0) 0%), linear-gradient(90deg, #ffffff 2px, rgba(0, 0, 0, 0) 0%), linear-gradient(rgba(255, 255, 255, 0.3) 1px, rgba(0, 0, 0, 0) 0%), linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, rgba(0, 0, 0, 0) 0%);
   background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
 }
+
+/* line 233, ../sass/screen.scss */
+.dots-pattern {
+  background: #665555;
+  -moz-background-image: -moz-radial-gradient(tan 30%, transparent 0), -moz-radial-gradient(tan 30%, transparent 0);
+  -webkit-background-image: -webkit-radial-gradient(tan 30%, transparent 0), -webkit-radial-gradient(tan 30%, transparent 0);
+  -o-background-image: -o-radial-gradient(tan 30%, transparent 0), -o-radial-gradient(tan 30%, transparent 0);
+  -ms-background-image: -ms-radial-gradient(tan 30%, transparent 0), -ms-radial-gradient(tan 30%, transparent 0);
+  background-image: radial-gradient(#d2b48c 30%, rgba(0, 0, 0, 0) 0%), radial-gradient(#d2b48c 30%, rgba(0, 0, 0, 0) 0%);
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
+  -o-background-size: 30px 30px;
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* line 236, ../sass/screen.scss */
+.gray-checkerboard {
+  background: #eeeeee;
+  background-image: linear-gradient(45deg, #bbbbbb 50%, rgba(0, 0, 0, 0) 0%);
+  background-size: 30px 30px;
+}
+
+/* line 241, ../sass/screen.scss */
+.checkerboard {
+  background: #5588aa;
+  background-image: linear-gradient(45deg, #d2b48c 25%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 75%, #d2b48c 0%), linear-gradient(45deg, #d2b48c 25%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 75%, #d2b48c 0%);
+  background-position: 0 0, 15px 15px;
+  background-size: 30px 30px;
+}
+
+/* line 244, ../sass/screen.scss */
+.checkerboard-svg {
+  background: #bbbbbb url('data:image/svg+xml,            <svg xmlns="http://www.w3.org/2000/svg"                  width="100" height="100"\a                  fill-opacity=".4">            <rect x="50" width="50" height="50" />             <rect y="50" width="50" height="50" />             </svg>');
+  background-size: 30px 30px;
+}
