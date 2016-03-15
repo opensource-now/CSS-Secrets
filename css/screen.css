@@ -434,18 +434,18 @@ body.bob-super-bkg {
 
 /* line 247, ../sass/screen.scss */
 .checkerboard-svg {
-  background: #bbbbbb url('data:image/svg+xml,            <svg xmlns="http://www.w3.org/2000/svg"                  width="100" height="100"\a                  fill-opacity=".4">            <rect x="50" width="50" height="50" />             <rect y="50" width="50" height="50" />             </svg>');
+  background: #bbbbbb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".4"><rect x="50" width="50" height="50" /><rect y="50" width="50" height="50" /></svg>');
   background-size: 30px 30px;
 }
 
 /*008-pseudorandom-backgrounds.html*/
-/* line 260, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .random-linear {
   background: linear-gradient(90deg, #ffbd12 15%, #665555 0%, #665555 40%, #66bb00 0%, #66bb00 65%, #ffffff 0%);
   background-size: 69px 100%;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .random-gradients {
   background: white;
   background-image: linear-gradient(90deg, #ffbd12 11px, rgba(0, 0, 0, 0) 0%), linear-gradient(90deg, #665555 23px, rgba(0, 0, 0, 0) 0%), linear-gradient(90deg, #66bb00 41px, rgba(0, 0, 0, 0) 0%);
@@ -521,7 +521,7 @@ body.bob-super-bkg {
     border-width: .3em;
   }
 }
-/* line 282, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 .cicanimation:before {
   content: '';
   display: block;
@@ -540,4 +540,80 @@ body.bob-super-bkg {
   -moz-animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+/*009-continuous-image-borders.html*/
+/* line 292, ../sass/screen.scss */
+.something-meaningful {
+  background: url(../images/stone-art.jpg);
+  background-size: cover;
+  padding: 20px;
+  padding: 2rem;
+}
+/* line 296, ../sass/screen.scss */
+.something-meaningful > div {
+  background: white;
+  padding: 20px;
+  padding: 2rem;
+}
+
+/* line 302, ../sass/screen.scss */
+.continuousBorder {
+  border: 1em solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, url(../images/stone-art.jpg) border-box 0/cover;
+  /* Styling & enable resize */
+  width: auto;
+  padding: 20px;
+  padding: 2rem;
+  overflow: hidden;
+  resize: both;
+}
+
+/* line 311, ../sass/screen.scss */
+.vintage-envelope {
+  padding: 10px;
+  padding: 1rem;
+  border: 1em solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/5em 5em;
+}
+
+@-moz-keyframes ants {
+  to {
+    background-position: 100%;
+  }
+}
+@-webkit-keyframes ants {
+  to {
+    background-position: 100%;
+  }
+}
+@keyframes ants {
+  to {
+    background-position: 100%;
+  }
+}
+/* line 321, ../sass/screen.scss */
+.marching-ants-borders {
+  padding: 10px;
+  padding: 1rem;
+  border: 1px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0/0.6em 0.6em;
+  -moz-animation: ants 12s;
+  -webkit-animation: ants 12s;
+  animation: ants 12s;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* line 330, ../sass/screen.scss */
+.footnote {
+  border-top: .15em solid transparent;
+  border-image: 100% 0 0 linear-gradient(90deg, currentColor 4em, rgba(0, 0, 0, 0) 0%);
+  padding-top: 10px;
+  padding-top: 1rem;
+  font-size: 220%;
 }
